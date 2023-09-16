@@ -19,6 +19,16 @@ public class PlayerData : BaseData
     public long time;
     public string timeRegister;
 
+
+    public bool isRate;
+
+    public void Rated()
+    {
+        isRate = true;
+    }
+
+    public bool IsRate => isRate;
+
     public void SetTimeRegister(long timeSet)
     {
         timeRegister = DateTime.Now.ToBinary().ToString();
@@ -31,7 +41,6 @@ public class PlayerData : BaseData
         time = 0;
         Save();
     }
-
 
     public override void Init()
     {

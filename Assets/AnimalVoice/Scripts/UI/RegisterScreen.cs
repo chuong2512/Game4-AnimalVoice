@@ -19,5 +19,13 @@ namespace BabySound
                 _buttons[i].Index = i;
             }
         }
+        
+        public override void Back()
+        {
+            if (GameDataManager.Instance.playerData.time > 0)
+            {
+                base.Back();
+            }
+        }
     }
 }

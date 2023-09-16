@@ -17,9 +17,11 @@ public enum ScreenType
     SetTimePopup,
     UnlockPopup,
     ComingSoon,
+    RateGame,
     
 }
 
+[DefaultExecutionOrder(-98)]
 public class UIManager : PersistentSingleton<UIManager>
 {
     [SerializeField] private BasePopup[] _screens;
@@ -61,11 +63,6 @@ public class UIManager : PersistentSingleton<UIManager>
         _screens = listScreen.ToArray();
     }
 #endif
-
-    void Start()
-    {
-        OpenScreen(ScreenType.HomeScreen);
-    }
 
     [Button]
     public void OpenScreen(ScreenType screenType)
